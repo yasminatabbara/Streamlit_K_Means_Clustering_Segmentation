@@ -583,7 +583,7 @@ if rad == "Cluster Calculator":
     #iterate for each cluster to see if it fits
     if st.button("Click here to calculate!"):
         for n in range(len(unique_clusters)):
-            if rec_q1[n] <= r <= rec_q3[n] and freq_q1[n] <= f <= freq_q3[n] and monetary_q1[n] <= m <= monetary_q3[n]:
+            if (rec_q1[n] <= r <= rec_q3[n]) and (freq_q1[n] <= f <= freq_q3[n]) and (monetary_q1[n] <= m <= monetary_q3[n]):
                 c = n
                 st.ballons()
                 st.success('Congratulations! This customer can be added to cluster number $d' % c)
