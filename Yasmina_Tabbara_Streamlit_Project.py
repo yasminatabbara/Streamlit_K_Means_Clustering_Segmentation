@@ -11,6 +11,7 @@ import numpy as np
 import plotly.express as px
 import plotly.graph_objects as go
 from plotly import tools
+from plotly.subplots import make_subplots
 from IPython import get_ipython
 
 import streamlit as st
