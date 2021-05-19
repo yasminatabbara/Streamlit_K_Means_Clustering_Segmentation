@@ -63,6 +63,7 @@ parso==0.8.2
 pickleshare==0.7.5
 Pillow==8.2.0
 pipreqs==0.4.10
+plotly==4.14.3
 prometheus-client==0.10.1
 prompt-toolkit==3.0.18
 protobuf==3.16.0
