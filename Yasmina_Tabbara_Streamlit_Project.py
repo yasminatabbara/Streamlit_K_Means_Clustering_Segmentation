@@ -57,7 +57,7 @@ data['Year'] = pd.DatetimeIndex(data['OrderDate']).year
 #new section: data exploration
 if rad == 'Data Exploration':
     st.markdown("<h1 style='text-align: center; color: MediumVioletRed;'>Data Exploration</h1>", unsafe_allow_html=True)
-    st.subheader("This dashbaord aims to provide some insights around the Sales.")
+    st.subheader("This dashbaord aims to provide some insights around the Sales of the store.")
     st.write("Start by selecting the Country and Segment you'd like to analyze in the Navigation Bar on the left.")
 
     # filter by country
