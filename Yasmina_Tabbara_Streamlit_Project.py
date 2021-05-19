@@ -49,8 +49,8 @@ if rad == 'Introduction':
     if st.button("Click me"):
         st.write(data.head(10))
         
-    st.write("The dataset used was extracted from kaggle and can be found at this link: https://www.kaggle.com/apoorvaappz/global-super-store-dataset")
-    st.write("Latitude and Longitude were added by generating them using Tableau.")
+    st.write("The dataset used was extracted from Kaggle and can be found at this link: https://www.kaggle.com/apoorvaappz/global-super-store-dataset")
+    st.write("Latitude and Longitude were added by automatic generation through Tableau.")
 
 #transform order date to correct format and create new column with year
 data['OrderDate'] = pd.to_datetime(data['Order Date']).dt.date
