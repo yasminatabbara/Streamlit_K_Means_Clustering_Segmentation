@@ -9,13 +9,9 @@ import pandas as pd
 import numpy as np
 
 import plotly.express as px
-from plotly.subplots import make_subplots
 import plotly.graph_objects as go
 from plotly import tools
-from plotly.subplots import make_subplots
-import matplotlib.pyplot as plt
 from IPython import get_ipython
-import matplotlib.cm as cm
 
 import streamlit as st
 
