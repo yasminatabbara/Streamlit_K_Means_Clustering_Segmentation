@@ -69,13 +69,13 @@ if rad == 'Data Exploration':
     filtered_data = filtered_data.loc[filtered_data['Segment'] == slct_sg]
 
     #map to visualize country transactions
-    st.subheader("The distribution of sales in the cities of {} for the {} segment".format(slct_cn, slgt_sg))
     fig = px.scatter_geo(filtered_data, lat="Latitude (generated)", lon='Longitude (generated)', color="City",
                      hover_name="City", size='Sales',
                      animation_frame="Year",
                      width = 1500,
                      height = 800,
                      projection="natural earth", color_continuous_scale=px.colors.sequential.Agsunset, title = 'Sales in different cities of')
+    fig.update_layout(title="The distribution of sales in the cities of {} for the {} segment".format(slct_cn, slct_sg))
     fig.update_layout(template='plotly_white')
     st.plotly_chart(fig)
     
