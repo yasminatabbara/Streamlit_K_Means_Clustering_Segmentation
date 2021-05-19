@@ -57,7 +57,8 @@ data['Year'] = pd.DatetimeIndex(data['OrderDate']).year
 #new section: data exploration
 if rad == 'Data Exploration':
     st.markdown("<h1 style='text-align: center; color: MediumVioletRed;'>Data Exploration</h1>", unsafe_allow_html=True)
-    st.subheader("This dashbaord aims to provide some 
+    st.subheader("This dashbaord aims to provide some insights around the Sales.")
+    st.subheader("Start by selecting the Country and Segment you'd like to analyze in the Navigation Bar on the left."
 
     # filter by country
     filt_cn = data['Country'].unique()
@@ -69,6 +70,8 @@ if rad == 'Data Exploration':
     slct_sg = st.sidebar.selectbox('Select the Segment:', filt_sg)
     filtered_data = filtered_data.loc[filtered_data['Segment'] == slct_sg]
 
+    st.header("Sales Analysis for the {} Segment, in {}".format(slct_sg, slct_cn))
+     
     #map to visualize country transactions
     fig = px.scatter_geo(filtered_data, lat="Latitude (generated)", lon='Longitude (generated)', color="City",
                      hover_name="City", size='Sales',
