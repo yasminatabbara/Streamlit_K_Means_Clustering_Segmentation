@@ -24,6 +24,7 @@ import warnings
 warnings.filterwarnings('ignore')
 st.set_option('deprecation.showPyplotGlobalUse', False)
 st.set_page_config(layout='wide')
+st.footer("Developed By [Yasmina Tabbara](https://www.linkedin.com/in/yasmina-tabbara/) as part of a Data-Driven Digital Marketing Course")
 
 #ccreate columns to center pic
 col1, col2, col3 = st.beta_columns([2,5,2])
