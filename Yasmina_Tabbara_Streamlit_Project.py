@@ -48,6 +48,9 @@ if rad == 'Introduction':
     st.write('Once it is done, you can click on the button below to take a look at the first 10 rows of the dataset.')
     if st.button("Click me"):
         st.write(data.head(10))
+        
+    st.write("The dataset used was extracted from kaggle and can be found at this link: https://www.kaggle.com/apoorvaappz/global-super-store-dataset")
+    st.write("Latitude and Longitude were added by generating them using Tableau.")
 
 #transform order date to correct format and create new column with year
 data['OrderDate'] = pd.to_datetime(data['Order Date']).dt.date
