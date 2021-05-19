@@ -427,7 +427,7 @@ if rad == 'K-Means Clustering':
     silhouette(rfm, n)
     clusters(rfm, range(2, n+1))
     # # Find Segments
-    kmeans = KMeans(n_clusters=nb, random_state=42)
+    kmeans = KMeans(n_clusters=n, random_state=42)
     kmeans.fit(rfm)
     clusters = kmeans.predict(rfm)
     rfm_df['Cluster'] = clusters
