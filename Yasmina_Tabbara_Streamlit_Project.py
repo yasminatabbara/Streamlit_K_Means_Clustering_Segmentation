@@ -42,6 +42,7 @@ nb = st.sidebar.slider('Slide to choose your number of clusters', 2, 10)
 #introduction section
 if rad == 'Introduction':
     st.markdown("<h1 style='text-align: center; color: MediumVioletRed;'>Customer Segmentation using RFM and K-Means Clustering</h1>", unsafe_allow_html=True)
+    st.markdown("<h3 style='text-align: center; color: Black;'>by Yasmina Tabbara</h3>", unsafe_allow_html=True)
     st.write("Customer segmentation is a key aspect of Marketing, allowing the businesses to better understand the behavior of their customers and targeting them more efficiently. Traditional methods include certain segmentation bases such as Geographical, Demographic, or Behavioral. One of the most famous methods is by using RFM which track's customers' buying behavior including the recency, frequency and monetary value of their purchases. However, RFM scores are usually pre-determined and can take a long time to calculate and apply. Here is where Machine Learning comes in and makes things much easier. By using unsupervised ML models, we can automatically detect different clusters in our customers based on their transactions.")
     st.subheader("Start by uploading your dataset in the sidebar!")
     st.write('Once it is done, you can click on the button below to take a look at the first 10 rows of the dataset.')
@@ -56,7 +57,7 @@ data['Year'] = pd.DatetimeIndex(data['OrderDate']).year
 #new section: data exploration
 if rad == 'Data Exploration':
     st.markdown("<h1 style='text-align: center; color: MediumVioletRed;'>Data Exploration</h1>", unsafe_allow_html=True)
-    
+    st.subheader("This dashbaord aims to provide some 
 
     # filter by country
     filt_cn = data['Country'].unique()
@@ -84,7 +85,7 @@ if rad == 'Data Exploration':
 
     #sales across time
     fig = px.histogram(filtered_data, x='OrderDate', y='Sales', histfunc='sum', height = 500, width = 800, color_discrete_sequence=px.colors.sequential.Agsunset)
-    fig.update_layout(title="Evolution of Sales in %s" % slct_cn)
+    fig.update_layout(title="Evolution of Sales in {} for the {} segment".format(slct_cn, slct_sg))
     fig.update_traces(xbins_size="M1")
     fig.update_xaxes(showgrid=True, ticklabelmode="period", dtick="M1")
     fig.update_layout(template='plotly_white',bargap=0.1)
@@ -95,7 +96,7 @@ if rad == 'Data Exploration':
     fig = px.pie(filtered_data, values='Sales', names='Category',
     color_discrete_sequence=px.colors.sequential.Agsunset, height = 520, width = 500)
     fig.update_traces(textposition='inside', textinfo='percent+label')
-    fig.update_layout(title="Sales Across Categories in %s" % slct_cn)
+    fig.update_layout(title="Sales Across Categories in {} for the {} segment".format(slct_cn, slct_sg))
     fig.update_layout(template='plotly_white', showlegend=False)
     col2.plotly_chart(fig)
     col2.subheader(' ')
@@ -110,13 +111,13 @@ if rad == 'Data Exploration':
                     name='Profits'
                     ))
     fig.update_layout(template='plotly_white',width=750, height =710)
-    fig.update_layout(title="Sales and Profits of Sub-Categories in %s" % slct_cn)
+    fig.update_layout(title="Sales and Profits of Sub-Categories in {} for the {} segment".format(slct_cn, slct_sg))
     col1.plotly_chart(fig)
 
     # relationship between discount and sales
     fig = px.scatter(filtered_data, x='Profit', y='Discount', color_discrete_sequence=px.colors.sequential.Agsunset,
     height = 700, width = 750)
-    fig.update_layout(title="Relationship Between Profits and Discounts in %s" % slct_cn)
+    fig.update_layout(title="Relationship Between Profits and Discounts in {} for the {} segment".format(slct_cn, slct_sg))
     fig.update_layout(template='plotly_white')
     col2.plotly_chart(fig)
 
