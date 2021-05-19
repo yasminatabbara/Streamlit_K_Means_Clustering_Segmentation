@@ -56,6 +56,7 @@ data['Year'] = pd.DatetimeIndex(data['OrderDate']).year
 #new section: data exploration
 if rad == 'Data Exploration':
     st.markdown("<h1 style='text-align: center; color: MediumVioletRed;'>Data Exploration</h1>", unsafe_allow_html=True)
+    
 
     # filter by country
     filt_cn = data['Country'].unique()
@@ -74,7 +75,7 @@ if rad == 'Data Exploration':
                      width = 1500,
                      height = 800,
                      projection="natural earth", color_continuous_scale=px.colors.sequential.Agsunset, title = 'Sales in different cities of')
-    fig.update_layout(title="The distribution of sales in the cities of %s" % slct_cn)
+    fig.update_layout(title="The distribution of sales in the cities of {} for the {} segment".format(slct_cn, slgt_sg))
     fig.update_layout(template='plotly_white')
     st.plotly_chart(fig)
 
