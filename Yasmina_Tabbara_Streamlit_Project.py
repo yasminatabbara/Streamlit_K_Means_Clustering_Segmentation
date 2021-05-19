@@ -152,6 +152,7 @@ rfm_df = rfm_df.round(decimals=0)
 
 #new section about analysis
 if rad == 'RFM Analysis':
+    st.markdown("<h1 style='text-align: center; color: MediumVioletRed;'>RFM Analysis</h1>", unsafe_allow_html=True)
     st.subheader("Now, we must calculate each element of the RFM. But before doing that, we must create a new dataframe that contains each unique customer id and then we can add the relevant values.")
 
     # Recency
